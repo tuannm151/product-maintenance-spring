@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete product</title>
+</head>
+<body>
+<h1>Are you sure you want to delete this product?</h1>
+<div style="display: flex; gap: 15px; flex-direction: column">
+    <div>
+        Product Code: <span  th:text="${product.code}" />
+    </div>
+    <div>
+        Product Description: <span th:text="${product.description}" />
+    </div>
+    <div>
+        Product Price: <span  th:text="${product.price}"/>
+    </div>
+</div>
+<form style="display: flex; gap: 15px; margin-top: 20px" th:action="@{/products/delete?action=confirm&productCode={product.code}}" method="post">
+    <button type="submit">Delete</button>
+    <button type="submit" th:formaction="@{/products/delete?action=cancel}">Cancel</button>
+</form>
+</body>
+</html>
