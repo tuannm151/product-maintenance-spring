@@ -17,7 +17,7 @@
         Product Price: <span  th:text="${product.price}"/>
     </div>
 </div>
-<form style="display: flex; gap: 15px; margin-top: 20px" th:action="@{/products/delete?action=confirm&productCode={product.code}}" method="post">
+<form style="display: flex; gap: 15px; margin-top: 20px" th:action="@{/products/delete(productCode=${product.code})}" method="post">
     <button type="submit">Delete</button>
     <button type="submit" th:formaction="@{/products/delete?action=cancel}">Cancel</button>
 </form>
