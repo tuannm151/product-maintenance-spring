@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    a:active, a:visited {
+        color: #0000FF;
+    }
+</style>
+<body>
+
+<h1>Your cart</h1>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Code</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <th:block th:each="product :${products}">
+        <tr valign="top">
+            <td>${product.code}</td>
+            <td>${product.description}</td>
+            <td>$${product.price}</td>
+            <td><a href="@{/edit?action=update&productCode=${product.code}}">">Edit</a></td>
+            <td><a style="" href="@{/delete?productCode=${product.code}}">">Delete</a></td>
+        </tr>
+    </th:block>
+
+</table>
+<div style="margin-top:20px">
+    <a href="/edit?action=create"/>Add Product</a>
+</div>
+</body>
+</html>
