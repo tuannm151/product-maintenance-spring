@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit products</title>
+    <title>Add products</title>
 </head>
 <body>
-<h1>Edit Product</h1>
+<h1>Add Product</h1>
 <form action="#" method="post" th:object="${product}" style="display: flex; flex-direction: column; gap:10px; align-items: start">
     <div>
         <label for="code">Product Code:</label>
-        <input type="text" id="code" th:name="code" th:value="${product.code != null} ? ${product.code} : ''"/>
+        <input type="text" id="code" th:field="*{code}"/>
     </div>
     <div>
         <label for="description">Product Description:</label>
-        <input type="text" id="description" th:name="description" th:value="${product.description != null} ? ${product.description} : ''"/>
+        <input type="text" id="description" th:field="*{description}"/>
     </div>
     <div>
         <label for="price">Product Price:</label>
-        <input type="text" id="price" th:name="price" th:value="${product.price != null} ? ${product.price} : ''"/>
+        <input type="text" id="price" th:field="*{price}"/>
     </div>
     <div th:if="${error} != null" th:text="${error}" style="color: red"/>
 

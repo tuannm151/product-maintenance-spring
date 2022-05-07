@@ -28,14 +28,14 @@
             <td th:text="${product.code}"/>
             <td th:text="${product.description}"/>
             <td th:text="${product.price}"/>
-            <td><a href="@{/edit?action=update&productCode=${product.code}}">Edit</a></td>
-            <td><a style="" href="@{/delete?productCode=${product.code}}">Delete</a></td>
+            <td><a th:href="@{/products/edit(productCode=${product.code})}">Edit</a></td>
+            <td><a style="" th:href="@{/products/delete(productCode=${product.code})}">Delete</a></td>
         </tr>
     </th:block>
 
 </table>
 <div style="margin-top:20px">
-    <a href="/edit?action=create"/>Add Product</a>
+    <a href="/products/add">Add Product</a>
 </div>
 </body>
 </html>
