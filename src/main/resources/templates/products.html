@@ -23,13 +23,13 @@
         <th></th>
         <th></th>
     </tr>
-    <th:block th:each="product :${products}">
+    <th:block th:each="product:${products}">
         <tr valign="top">
-            <td>${product.code}</td>
-            <td>${product.description}</td>
-            <td>$${product.price}</td>
-            <td><a href="@{/edit?action=update&productCode=${product.code}}">">Edit</a></td>
-            <td><a style="" href="@{/delete?productCode=${product.code}}">">Delete</a></td>
+            <td th:text="${product.code}"/>
+            <td th:text="${product.description}"/>
+            <td th:text="${product.price}"/>
+            <td><a href="@{/edit?action=update&productCode=${product.code}}">Edit</a></td>
+            <td><a style="" href="@{/delete?productCode=${product.code}}">Delete</a></td>
         </tr>
     </th:block>
 
